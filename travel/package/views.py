@@ -13,7 +13,7 @@ def packview(request,myid):
     package=Packages.objects.filter(id=myid)
     current_user = request.user
     a = current_user.first_name
-    print(a)
+
 
     if request.method == 'POST':
         form = contact(request.POST)
@@ -21,7 +21,7 @@ def packview(request,myid):
         if form.is_valid():
             print("valid")
             form.save()
-    form=contact()
+    form=contact(initial={'name':current_user.first_name,'package':Packages.objects.get(pk=myid) ,'message': 'Hi'})
     return render(request, "packageview.html", {"packages": package[0],'form':form})
 
 

@@ -112,7 +112,7 @@ class Packages(models.Model):
 
 
 class Reviews(models.Model):
-    reviewer_img=models.ImageField(upload_to='pics', null=True,blank=True)
+    reviewer_img=models.ImageField(upload_to='pics', null=True,blank=True,default='testimonial1.jpg')
     review=models.TextField(max_length=200, null=True, blank=True)
     review_name=models.CharField(max_length=50, null=True, blank=True)
     address=models.CharField(max_length=50, null=True, blank=True)
@@ -128,7 +128,9 @@ class Reviews(models.Model):
 class Contact(models.Model):
     name=models.CharField(max_length=50)
     mobile = models.BigIntegerField()
+    package=models.CharField(max_length=100, null=True)
     message= models.TextField(max_length=1000)
+
 
 
     def __str__(self):
