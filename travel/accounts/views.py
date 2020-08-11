@@ -13,7 +13,7 @@ def register(request):
         password1= request.POST['password1']
         password2= request.POST['password2']
         email= request.POST['email']
-        number= request.POST['number']
+
 
 
 

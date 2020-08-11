@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import User,auth
+from django import forms
+from django.conf import settings
 
 class Destination(models.Model):
     name= models.CharField(max_length=100)
@@ -50,9 +53,11 @@ class SpecialOffer(models.Model):
     day_10_img = models.ImageField(upload_to='pics', null=True, blank=True)
 
 
-
     def __str__(self):
         return self.name
+
+
+
 
 
 class Packages(models.Model):
@@ -104,6 +109,8 @@ class Packages(models.Model):
         return self.name
 
 
+
+
 class Reviews(models.Model):
     reviewer_img=models.ImageField(upload_to='pics', null=True,blank=True)
     review=models.TextField(max_length=200, null=True, blank=True)
@@ -112,3 +119,24 @@ class Reviews(models.Model):
 
     def __str__(self):
         return self.review_name
+
+
+
+
+
+
+class Contact(models.Model):
+    name=models.CharField(max_length=50)
+    mobile = models.BigIntegerField()
+    message= models.TextField(max_length=1000)
+
+
+    def __str__(self):
+        return self.name
+
+
+
+
+
+
+
