@@ -973,7 +973,6 @@ html,body{
     -ms-transition:.5s;
     -o-transition:.5s;
     transition: .5s;
-
 }
 .home1-testm-single:hover {
     box-shadow: 0 0 30px rgba(0,0,0,.3);
